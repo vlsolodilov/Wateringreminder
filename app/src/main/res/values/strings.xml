@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Watering reminder</string>
+    <string name="calendar">Календарь</string>
+    <string name="settings">Настройки</string>
+    <string name="plants">Растения</string>
+    <string name="tasks">Задачи</string>
+
+    <string name="name">Название</string>
+    <string name="description">Описание</string>
+    <string name="date">Дата</string>
+    <string name="text_empty">Пустое название</string>
+    <string name="saved">Растение сохранено</string>
+    <string name="reminder_saved">Напоминание сохранено</string>
+    <string name="fields_empty">Заполните все поля</string>
+    <string name="date_error">Неверно указана дата</string>
+
+    <string-array name="reminders">
+        <item>Полив</item>
+        <item>Опрыскивание</item>
+        <item>Удобрение</item>
+        <item>Поворот</item>
+        <item>Обрезка</item>
+    </string-array>
+
+</resources>

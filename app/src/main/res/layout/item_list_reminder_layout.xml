@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:drawable/editbox_background">
+
+    <TextView
+        android:id="@+id/tvLast"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/roboto"
+        android:text="25.09.21"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv13"
+        app:layout_constraintStart_toEndOf="@+id/tv13" />
+
+    <TextView
+        android:id="@+id/tv14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto"
+        android:text="Время напоминания:"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/tv11"
+        app:layout_constraintTop_toBottomOf="@+id/tv11" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/roboto"
+        android:text="20:00"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv14" />
+
+    <TextView
+        android:id="@+id/tv12"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/roboto"
+        android:text="дн."
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv11"
+        app:layout_constraintStart_toEndOf="@+id/tvPeriod" />
+
+    <TextView
+        android:id="@+id/tvPeriod"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/roboto"
+        android:text="2"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv11"
+        app:layout_constraintStart_toEndOf="@+id/tv11" />
+
+    <TextView
+        android:id="@+id/tv13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/roboto"
+        android:text="Последние действие:"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv11"
+        app:layout_constraintTop_toBottomOf="@+id/tv14" />
+
+    <TextView
+        android:id="@+id/tvNameReminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto"
+        android:text="Полив"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto"
+        android:text="Интервал:"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/tvNameReminder"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameReminder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
