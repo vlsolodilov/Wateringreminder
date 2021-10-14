@@ -24,6 +24,8 @@ public class Constants {
     public static final String LAST_REMINDER = "last";
     public static final String DB_NAME = "my_db.db";
     public static final int DB_VERSION = 1;
+    // TODO: Написать запрос целиком, чтобы было понятнее
+    // "CREATE TABLE IF NOT EXISTS ...
     public static final String TABLE_PLANTS_STRUCTURE = "CREATE TABLE IF NOT EXISTS " +
             TABLE_PLANTS_NAME + " (" + ID_PLANT + " INTEGER PRIMARY KEY," + NAME_PLANT + " TEXT,"
             + DESCRIPTION_PLANT + " TEXT," + DATE_PLANT + " INTEGER," + URI_PLANT + " TEXT)";

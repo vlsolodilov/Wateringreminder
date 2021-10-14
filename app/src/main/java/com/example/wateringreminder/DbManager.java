@@ -10,7 +10,10 @@ import com.example.wateringreminder.entity.Item;
 import com.example.wateringreminder.entity.Reminder;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class DbManager {
     private Context context;
@@ -59,6 +62,7 @@ public class DbManager {
     }
 
     public void updateReminder(String name, int plant, long time, int period, long last, int id){
+        // TODO: Возможная Sql-инъекция, почему бы не сделать как в getFromDB?
         String selection = Constants.ID_REMINDER + "=" + id;
         ContentValues cv = new ContentValues();
         cv.put(Constants.NAME_REMINDER, name);
@@ -99,6 +103,7 @@ public class DbManager {
 
         while (cursorItem.moveToNext()) {
             Item item = new Item();
+            // TODO: Можно сделать конструктор у класса Item для упрощения создания
             String name = cursorItem.getString(cursorItem.getColumnIndex(Constants.NAME_PLANT));
             String description = cursorItem.getString(cursorItem.getColumnIndex(Constants.DESCRIPTION_PLANT));
             Long date = cursorItem.getLong(cursorItem.getColumnIndex(Constants.DATE_PLANT));
@@ -141,11 +146,15 @@ public class DbManager {
         final List<Reminder> reminders = new ArrayList<>();
         final Cursor cursorReminder = db.query(Constants.TABLE_REMINDERS_NAME, null, null,
                 null, null, null, null);
-
+        // TODO: Может быть быстрее сначала найти все номера столбцов и сложить в ассоциативный массив?
+        Map<String, Integer> headers = new TreeMap<>();
+        for (int i = 0;  i < cursorReminder.getColumnCount(); i++) {
+            headers.put(cursorReminder.getColumnName(i), i);
+        }
         while (cursorReminder.moveToNext()) {
             Reminder reminder = new Reminder();
-            int id = cursorReminder.getInt(cursorReminder.getColumnIndex(Constants.ID_REMINDER));
-            String name = cursorReminder.getString(cursorReminder.getColumnIndex(Constants.NAME_REMINDER));
+            int id = cursorReminder.getInt(headers.get(Constants.ID_REMINDER));
+            String name = cursorReminder.getString(headers.get(Constants.NAME_REMINDER));
             int plant = cursorReminder.getInt(cursorReminder.getColumnIndex(Constants.PLANT_REMINDER));
             long time = cursorReminder.getLong(cursorReminder.getColumnIndex(Constants.TIME_REMINDER));
             int period = cursorReminder.getInt(cursorReminder.getColumnIndex(Constants.PERIOD_REMINDER));

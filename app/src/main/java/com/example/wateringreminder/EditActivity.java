@@ -183,6 +183,7 @@ public class EditActivity extends AppCompatActivity implements OnDataReceived {
     }
 
     private int getId() {
+        // TODO: убрать, очень вредно заранее считать айдишник
         if (item == null) {
             id = dbManager.getLastId(Constants.TABLE_PLANTS_NAME) + 1;
             if (id == 0)

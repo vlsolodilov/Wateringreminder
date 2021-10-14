@@ -190,6 +190,7 @@ public class EditReminderActivity extends AppCompatActivity {
                 long finalTime = time;
                 long finalLast = last;
                 int finalPeriod = period;
+                // TODO: убрать, очень вредно заранее считать айдишник
                 int id = dbManager.getLastId(Constants.TABLE_REMINDERS_NAME) + 1;
                 AppExecuter.getInstance().getSubIO().execute(new Runnable() {
                     @Override
